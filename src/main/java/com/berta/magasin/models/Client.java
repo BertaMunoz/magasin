@@ -11,9 +11,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Data
 @Entity
 @Table(name="client")
 public class Client {
@@ -21,7 +18,7 @@ public class Client {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	@Column(name="nom")
 	private String nom;
@@ -34,18 +31,20 @@ public class Client {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Client(Long id, String nom, String prenom) {
+	public Client(int id, String nom, String prenom) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 	}
 
-	public Long getId() {
+
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -63,6 +62,11 @@ public class Client {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
 	}
 
 

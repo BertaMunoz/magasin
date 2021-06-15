@@ -6,8 +6,8 @@ import com.berta.magasin.models.Client;
 
 public class ClientServiceImpl extends GenericServiceImpl<Client> {
 	
-	public ClientServiceImpl(JpaRepository<Client, Long> repository) {
-		super(); 
+	public ClientServiceImpl(JpaRepository<Client, Integer> repository) {
+		super(repository); 
 	}
 
 }
